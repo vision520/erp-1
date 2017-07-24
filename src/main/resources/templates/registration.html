@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="utf-8"/>
+    <meta fileName="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta fileName="description" content=""/>
+    <meta fileName="author" content="ThemeBucket" />
+    <link rel="shortcut icon" href="#" type="image/png"/>
+
+    <title>Registration</title>
+
+    <link th:href="@{css/style.css}" rel="stylesheet"/>
+    <link th:href="@{css/style-responsive.css}" rel="stylesheet"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script th:src="@{js/html5shiv.js}"></script>
+    <script th:src="@{js/respond.min.}"></script>
+    <![endif]-->
+</head>
+
+<body class="login-body">
+<script language="javascript">
+    function validate(f){
+        if(!(/^\w{4,20}$/.test(f.username.value))){
+            alert("请输入长度为4-20的用户名。") ;
+            f.username.focus() ;
+            return false ;
+        }
+        if(!(/^\w{6,20}$/.test(f.password.value))){
+            alert("请输入长度为6-20的密码。") ;
+            f.password.focus() ;
+            return false ;
+        }
+    }
+</script>
+<div class="container">
+
+    <form class="form-signin" action="/useradd" method="post" onsubmit="return validate(this)">
+        <div class="form-signin-heading text-center">
+            <h1 class="sign-title">新 用 户 注 册</h1>
+            <img src="images/login-logo.png" alt=""/>
+        </div>
+        <div class="login-wrap">
+            <p>输入你的账号信息</p>
+            <input type="text" autofocus="" placeholder="请输入您的用户名" class="form-control" name="username" />
+            <input type="password" autofocus="" placeholder="请输入您的密码" class="form-control" name="password" />
+            <button type="submit" class="btn btn-lg btn-login btn-block">
+                <i class="fa fa-check"></i>
+            </button>
+            <div class="registration">
+                已经注册过了?
+                <a href="/toLogin" class="">
+                    点此登录
+                </a>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+<!-- Placed js at the end of the document so the pages load faster -->
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script th:src="@{js/jquery-1.10.2.min.js}"></script>
+<script th:src="@{js/bootstrap.min.js}"></script>
+<script th:src="@{js/modernizr.min.js}"></script>
+
+</body>
+</html>

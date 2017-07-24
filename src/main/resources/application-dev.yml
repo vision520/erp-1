@@ -1,0 +1,20 @@
+server:
+  port: 8080
+  session:
+    timeout: 60 #session过期时间，以分钟计算
+spring:
+  datasource:
+    driver-class-fileName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/erp
+    username: root
+    password: 718293
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  thymeleaf:
+    mode: LEGACYHTML5 #原为HTML5
+    encoding: utf-8
+    content-type: text/html
+    cache: false
+
